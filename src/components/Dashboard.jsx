@@ -12,7 +12,9 @@ const Dashboard = () => {
   }, [won]);
 
   const getScore = async () => {
-    const response = await fetch('https://cgi.cse.unsw.edu.au/~cs6080/raw/data/info.json');
+    const response = await fetch(
+      'https://cgi.cse.unsw.edu.au/~cs6080/raw/data/info.json'
+    );
     const data = await response.json();
 
     if (data.error) {
@@ -24,26 +26,29 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='w-screen h-screen flex justify-center items-center'>
+    <>
       <div className='flex flex-col justify-center items-center'>
-        <div className='text-red-500 text-[2em]'>
+        <div className='text-red-500 text-[2em] break-words text-center'>
           Please choose an option from the navbar.
         </div>
 
-        <div className='flex gap-2'>
+        <div className='flex gap-2 items-center'>
           <div>
             Games won: {won}
           </div>
 
-          <button onClick={() => {
-            localStorage.setItem('won', 0);
-            setWon(0);
-          }}>
+          <button
+            className='btn'
+            onClick={() => {
+              localStorage.setItem('won', 0);
+              setWon(0);
+            }}
+          >
             (reset)
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

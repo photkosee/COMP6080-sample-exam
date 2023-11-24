@@ -5,7 +5,7 @@ import PageList from './PageList';
 
 const App = () => {
   return (
-    <div className='m-0'>
+    <div className='m-0 w-full h-full'>
       <Router>
         <PageList />
       </Router>

@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='h-[80px] w-full fixed bg-[#eeeeee] flex justify-between'>
+    <div className='h-[80px] w-full fixed bg-[#eeeeee] flex justify-between top-0 z-20'>
       <img src={logo} alt='logo' className='m-[15px] w-[50px] h-[50px]' />
 
       <div className='flex items-center gap-2 m-2'>
@@ -43,8 +43,14 @@ const Navbar = () => {
 
         <div>|</div>
 
-        <button onClick={() => navigate('/tetro')}>
-          {size ? 'Tetro' : 'T'}
+        <button onClick={() => navigate('/treto')}>
+          {size ? 'Treto' : 'Tt'}
+        </button>
+
+        <div>|</div>
+
+        <button onClick={() => navigate('/tower')}>
+          {size ? 'Tower' : 'Tw'}
         </button>
       </div>
     </div>
